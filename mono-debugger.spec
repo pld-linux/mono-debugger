@@ -12,13 +12,13 @@ Patch0:		%{name}-recent-gtk-sharp.patch
 URL:		http://www.go-mono.com/
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	libtool
-BuildRequires:	gtk+2-devel
-BuildRequires:	libgnome-devel
 BuildRequires:	glib2-devel >= 2.0.0
-BuildRequires:	mono-devel >= 0.20-2
-BuildRequires:	mono-csharp
+BuildRequires:	gtk+2-devel
 BuildRequires:	gtk-sharp-devel >= 0.8
+BuildRequires:	libgnome-devel
+BuildRequires:	libtool
+BuildRequires:	mono-csharp
+BuildRequires:	mono-devel >= 0.20-2
 BuildRequires:	readline-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -43,13 +43,18 @@ Odpluskiwacz dla mono.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
+
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 # make .so symlinks, they are dynamically loaded
-for f in $RPM_BUILD_ROOT/%{_libdir}/*.so.* ; do
+for f in $RPM_BUILD_ROOT%{_libdir}/*.so.* ; do
 	b=$(basename $f)
 	ln -s $b $RPM_BUILD_ROOT%{_libdir}$(echo $b | sed -e 's/\.so.*/.so/')
 done
+
+%clean
+rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
@@ -58,6 +63,3 @@ done
 %attr(755,root,root) %{_libdir}/mono-debugger-jit-wrapper
 %attr(755,root,root) %{_libdir}/*.so*
 %{_libdir}/*.dll
-
-%clean
-rm -rf $RPM_BUILD_ROOT
