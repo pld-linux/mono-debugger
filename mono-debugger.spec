@@ -7,6 +7,7 @@ Release:	0.%{_snap}.0
 License:	GPL
 Group:		Development/Libraries
 Source0:	%{name}-cvs-%{_snap}.tar.bz2
+# Source0-md5:	dc78ca8cb5ac123538a704e7d1911993
 Patch0:		%{name}-recent-gtk-sharp.patch
 URL:		http://www.go-mono.com/
 BuildRequires:	autoconf
