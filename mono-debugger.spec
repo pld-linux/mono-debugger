@@ -1,13 +1,12 @@
-%define	_snap	20040216
 Summary:	Debugger for mono
 Summary(pl):	Odpluskiwacz dla mono
 Name:		mono-debugger
-Version:	0.5
-Release:	0.%{_snap}.1
+Version:	0.6
+Release:	1
 License:	GPL
 Group:		Development/Libraries
-Source0:	%{name}-%{version}-%{_snap}.tar.bz2
-# Source0-md5:	d59eb3ffc1b8dec5cba8949bd1bdc183
+Source0:	http://www.go-mono.com/archive/%{name}-%{version}.tar.gz
+# Source0-md5:	5874029644c64bfa957cc538a9e3f906
 URL:		http://www.go-mono.com/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -17,12 +16,13 @@ BuildRequires:	gtk-sharp-devel >= 0.16
 BuildRequires:	libgnome-devel
 BuildRequires:	libtool
 BuildRequires:	mono-csharp
-BuildRequires:	mono-devel >= 0.26-3.1
+BuildRequires:	mono-devel >= 0.31
 BuildRequires:	mono-jay
+BuildRequires:	monodoc
 BuildRequires:	pkgconfig
 BuildRequires:	readline-devel
-Requires:	gtk-sharp >= 0.16
-Requires:	mono >= 0.26
+Requires:	gtk-sharp >= 0.18
+Requires:	mono >= 0.31
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -103,6 +103,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/lib*.so
 %{_libdir}/lib*.la
+%{_libdir}/pkgconfig/*.pc
 
 %files static
 %defattr(644,root,root,755)
