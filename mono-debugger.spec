@@ -28,7 +28,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Debugger for mono.
 
 %description -l pl
-Odpluskiwacz dla mono.
+Odpluskwiacz dla mono.
 
 %package devel
 Summary:	Development files for mono debugger
@@ -40,7 +40,7 @@ Requires:	%{name} = %{version}-%{release}
 Development files for mono debugger.
 
 %description devel -l pl
-Pliki potrzebne programistom korzystaj±cym z bibliotek odpluskiwacza mono.
+Pliki potrzebne programistom korzystaj±cym z bibliotek odpluskwiacza mono.
 
 %package static
 Summary:	Static mono debugger libraries
@@ -52,7 +52,7 @@ Requires:	%{name}-devel = %{version}-%{release}
 Static mono debugger libraries.
 
 %description static -l pl
-Statyczne biblioteki odpluskiwacza mono.
+Statyczne biblioteki odpluskwiacza mono.
 
 %package doc
 Summary:	Documentation for mono debugger
@@ -64,7 +64,7 @@ Requires:	monodoc
 Documentation for mono debugger.
 
 %description doc -l pl
-Dokumentacja odpluskiwacza dla mono.
+Dokumentacja odpluskwiacza dla mono.
 
 %prep
 %setup -q
