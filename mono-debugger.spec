@@ -103,7 +103,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/lib*.so
 %{_libdir}/lib*.la
-%{_libdir}/pkgconfig/*.pc
+%{_pkgconfigdir}/*.pc
 
 %files static
 %defattr(644,root,root,755)
