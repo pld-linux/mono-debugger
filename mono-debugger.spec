@@ -16,7 +16,6 @@ BuildRequires:	gtk-sharp-devel >= 0.16
 BuildRequires:	libgnome-devel
 BuildRequires:	libtool
 BuildRequires:	mono-csharp
-BuildRequires:	mono-devel >= 0.31
 BuildRequires:	mono-jay
 BuildRequires:	monodoc
 BuildRequires:	pkgconfig
