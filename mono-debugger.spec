@@ -1,12 +1,13 @@
 Summary:	Debugger for mono
 Summary(pl):	Odpluskiwacz dla mono
 Name:		mono-debugger
-Version:	0.6
+Version:	0.10
 Release:	1
 License:	GPL
 Group:		Development/Libraries
-Source0:	http://www.go-mono.com/archive/%{name}-%{version}.tar.gz
-# Source0-md5:	5874029644c64bfa957cc538a9e3f906
+Source0:	http://go-mono.com/sources/%{name}/%{name}-%{version}.tar.gz
+# Source0-md5:	6b7ea2b91f733788fdba8d4d1ff746c4
+Patch0:		%{name}-build-doc.patch
 URL:		http://www.go-mono.com/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -68,6 +69,7 @@ Dokumentacja odpluskwiacza dla mono.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %{__libtoolize}
@@ -84,6 +86,10 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+cp doc/debugger.source $RPM_BUILD_ROOT%{_libdir}/monodoc/sources
+cp doc/debugger.tree $RPM_BUILD_ROOT%{_libdir}/monodoc/sources
+cp doc/debugger.zip $RPM_BUILD_ROOT%{_libdir}/monodoc/sources
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -96,7 +102,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_libdir}/mono-debugger-mini-wrapper
 %attr(755,root,root) %{_libdir}/*.so.*.*.*
-%{_libdir}/*.dll
+%{_libdir}/*
 
 %files devel
 %defattr(644,root,root,755)
