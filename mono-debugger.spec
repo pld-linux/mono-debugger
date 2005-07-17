@@ -2,10 +2,10 @@ Summary:	Debugger for mono
 Summary(pl):	Odpluskiwacz dla mono
 Name:		mono-debugger
 Version:	0.10
-Release:	1
+Release:	0.1
 License:	GPL
-Group:		Development/Libraries
-Source0:	http://go-mono.com/sources/%{name}/%{name}-%{version}.tar.gz
+Group:		Development/Tools
+Source0:	http://go-mono.com/sources/mono-debugger/%{name}-%{version}.tar.gz
 # Source0-md5:	6b7ea2b91f733788fdba8d4d1ff746c4
 Patch0:		%{name}-build-doc.patch
 URL:		http://www.go-mono.com/
@@ -102,7 +102,8 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_libdir}/mono-debugger-mini-wrapper
 %attr(755,root,root) %{_libdir}/*.so.*.*.*
-%{_libdir}/*
+# XXX: WRONG, FIX IT
+#%{_libdir}/*
 
 %files devel
 %defattr(644,root,root,755)
