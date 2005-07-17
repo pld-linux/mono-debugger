@@ -21,7 +21,6 @@ BuildRequires:	mono-jay
 BuildRequires:	monodoc
 BuildRequires:	pkgconfig
 BuildRequires:	readline-devel
-Requires:	gtk-sharp >= 0.18
 Requires:	mono >= 1.1.8
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -102,12 +101,11 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_libdir}/mono-debugger-mini-wrapper
 %attr(755,root,root) %{_libdir}/*.so.*.*.*
-# XXX: WRONG, FIX IT
-#%{_libdir}/*
+%{_libdir}/lib*.so*
+%{_libdir}/mono/*
 
 %files devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/lib*.so
 %{_libdir}/lib*.la
 %{_pkgconfigdir}/*.pc
 
