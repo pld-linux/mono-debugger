@@ -100,8 +100,8 @@ rm -rf $RPM_BUILD_ROOT
 %doc NEWS README ChangeLog TODO AUTHORS doc/*.t* RELEASE-NOTES-*
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_libdir}/mono-debugger-mini-wrapper
-%attr(755,root,root) %{_libdir}/*.so.*.*.*
-%{_libdir}/lib*.so*
+%attr(755,root,root) %{_libdir}/lib*.so.*.*.*
+%attr(755,root,root) %{_libdir}/lib*.so
 %{_libdir}/mono/*
 
 %files devel
