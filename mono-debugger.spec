@@ -22,7 +22,7 @@ BuildRequires:	monodoc
 BuildRequires:	pkgconfig
 BuildRequires:	readline-devel
 Requires:	gtk-sharp >= 0.18
-Requires:	mono >= 0.31
+Requires:	mono >= 1.1.8
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
