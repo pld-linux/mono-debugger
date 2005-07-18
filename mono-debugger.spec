@@ -102,7 +102,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/mono-debugger-mini-wrapper
 %attr(755,root,root) %{_libdir}/lib*.so.*.*.*
 %attr(755,root,root) %{_libdir}/lib*.so
-%{_libdir}/mono/*
+%{_prefix}/lib/mono
 
 %files devel
 %defattr(644,root,root,755)
@@ -115,4 +115,4 @@ rm -rf $RPM_BUILD_ROOT
 
 %files doc
 %defattr(644,root,root,755)
-%{_libdir}/monodoc/sources/*
+%{_libdir}/monodoc/sources
