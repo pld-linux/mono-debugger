@@ -1,27 +1,24 @@
+%include	/usr/lib/rpm/macros.mono
 Summary:	Debugger for mono
 Summary(pl):	Odpluskiwacz dla mono
 Name:		mono-debugger
-Version:	0.10
+Version:	0.11
 Release:	0.1
 License:	GPL
 Group:		Development/Tools
 Source0:	http://go-mono.com/sources/mono-debugger/%{name}-%{version}.tar.gz
-# Source0-md5:	6b7ea2b91f733788fdba8d4d1ff746c4
+# Source0-md5:	d41f098cdeb4b3be0e822a36b52b2b82
 Patch0:		%{name}-build-doc.patch
 URL:		http://www.go-mono.com/
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	glib2-devel >= 2.0.0
-BuildRequires:	gtk+2-devel
-BuildRequires:	gtk-sharp-devel >= 0.16
-BuildRequires:	libgnome-devel
+BuildRequires:	glib2-devel
 BuildRequires:	libtool
-BuildRequires:	mono-csharp
+BuildRequires:	mono-csharp >= 1.1.11
 BuildRequires:	mono-jay
 BuildRequires:	monodoc
 BuildRequires:	pkgconfig
 BuildRequires:	readline-devel
-Requires:	mono >= 1.1.8
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -68,7 +65,7 @@ Dokumentacja odpluskwiacza dla mono.
 
 %prep
 %setup -q
-%patch0 -p1
+#%patch0 -p1
 
 %build
 %{__libtoolize}
@@ -85,9 +82,9 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-cp doc/debugger.source $RPM_BUILD_ROOT%{_libdir}/monodoc/sources
-cp doc/debugger.tree $RPM_BUILD_ROOT%{_libdir}/monodoc/sources
-cp doc/debugger.zip $RPM_BUILD_ROOT%{_libdir}/monodoc/sources
+#cp doc/debugger.source $RPM_BUILD_ROOT%{_libdir}/monodoc/sources
+#cp doc/debugger.tree $RPM_BUILD_ROOT%{_libdir}/monodoc/sources
+#cp doc/debugger.zip $RPM_BUILD_ROOT%{_libdir}/monodoc/sources
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -99,10 +96,11 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc NEWS README ChangeLog TODO AUTHORS doc/*.t* RELEASE-NOTES-*
 %attr(755,root,root) %{_bindir}/*
-%attr(755,root,root) %{_libdir}/mono-debugger-mini-wrapper
 %attr(755,root,root) %{_libdir}/lib*.so.*.*.*
 %attr(755,root,root) %{_libdir}/lib*.so
 %{_prefix}/lib/mono/1.0/mdb.exe
+%{_prefix}/lib/mono/1.0/mdb-server*
+%attr(755,root,root) %{_prefix}/lib/mono/1.0/mono-debugger-mini-wrapper
 %{_prefix}/lib/mono/gac/*
 %{_prefix}/lib/mono/%{name}
 
@@ -115,6 +113,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %{_libdir}/lib*.a
 
-%files doc
-%defattr(644,root,root,755)
-%{_libdir}/monodoc/sources/*
+#%files doc
+#%defattr(644,root,root,755)
+#%{_libdir}/monodoc/sources/*
