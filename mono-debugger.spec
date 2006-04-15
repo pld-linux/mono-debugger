@@ -2,12 +2,12 @@
 Summary:	Debugger for mono
 Summary(pl):	Odpluskiwacz dla mono
 Name:		mono-debugger
-Version:	0.11
+Version:	0.12
 Release:	0.1
 License:	GPL
 Group:		Development/Tools
 Source0:	http://go-mono.com/sources/mono-debugger/%{name}-%{version}.tar.gz
-# Source0-md5:	d41f098cdeb4b3be0e822a36b52b2b82
+# Source0-md5:	db411ed73f0b126e50d50b24bdd51b3f
 Patch0:		%{name}-build-doc.patch
 URL:		http://www.go-mono.com/
 BuildRequires:	autoconf
@@ -99,8 +99,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/lib*.so.*.*.*
 %attr(755,root,root) %{_libdir}/lib*.so
 %{_prefix}/lib/mono/1.0/mdb.exe
-%{_prefix}/lib/mono/1.0/mdb-server*
-%attr(755,root,root) %{_prefix}/lib/mono/1.0/mono-debugger-mini-wrapper
 %{_prefix}/lib/mono/gac/*
 %{_prefix}/lib/mono/%{name}
 
