@@ -2,19 +2,20 @@
 Summary:	Debugger for mono
 Summary(pl):	Odpluskiwacz dla mono
 Name:		mono-debugger
-Version:	0.12
+Version:	0.20
 Release:	0.1
 License:	GPL
 Group:		Development/Tools
-Source0:	http://go-mono.com/sources/mono-debugger/%{name}-%{version}.tar.gz
-# Source0-md5:	db411ed73f0b126e50d50b24bdd51b3f
+#Source0:	http://go-mono.com/sources/mono-debugger/%{name}-%{version}.tar.gz
+Source0:	http://primates.ximian.com/~martin/debugger/%{name}-%{version}.tar.gz
+# Source0-md5:	b580531dd7267398a5caa73838304474
 Patch0:		%{name}-build-doc.patch
 URL:		http://www.go-mono.com/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	glib2-devel
 BuildRequires:	libtool
-BuildRequires:	mono-csharp >= 1.1.11
+BuildRequires:	mono-csharp >= 1.1.16
 BuildRequires:	mono-jay
 BuildRequires:	monodoc
 BuildRequires:	pkgconfig
