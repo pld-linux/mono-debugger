@@ -21,7 +21,7 @@ BuildRequires:	mono-jay
 BuildRequires:	monodoc
 BuildRequires:	pkgconfig
 BuildRequires:	readline-devel
-Requires:	mono >= 1.1.16
+Requires:	mono >= 1.2.1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
