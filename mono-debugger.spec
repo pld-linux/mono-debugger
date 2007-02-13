@@ -1,6 +1,6 @@
 %include	/usr/lib/rpm/macros.mono
 Summary:	Debugger for mono
-Summary(pl.UTF-8):   Odpluskiwacz dla mono
+Summary(pl.UTF-8):	Odpluskiwacz dla mono
 Name:		mono-debugger
 Version:	0.31
 Release:	1
@@ -32,7 +32,7 @@ Odpluskwiacz dla mono.
 
 %package devel
 Summary:	Development files for mono debugger
-Summary(pl.UTF-8):   Pliki potrzebne programistom korzystającym z bibliotek odpluskiwacza mono
+Summary(pl.UTF-8):	Pliki potrzebne programistom korzystającym z bibliotek odpluskiwacza mono
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
@@ -44,7 +44,7 @@ Pliki potrzebne programistom korzystającym z bibliotek odpluskwiacza mono.
 
 %package static
 Summary:	Static mono debugger libraries
-Summary(pl.UTF-8):   Statyczne biblioteki odpluskiwacza mono
+Summary(pl.UTF-8):	Statyczne biblioteki odpluskiwacza mono
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
@@ -56,7 +56,7 @@ Statyczne biblioteki odpluskwiacza mono.
 
 %package doc
 Summary:	Documentation for mono debugger
-Summary(pl.UTF-8):   Dokumentacja odpluskiwacza dla mono
+Summary(pl.UTF-8):	Dokumentacja odpluskiwacza dla mono
 Group:		Documentation
 Requires:	monodoc
 
