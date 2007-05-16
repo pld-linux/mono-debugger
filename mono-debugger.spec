@@ -2,26 +2,26 @@
 Summary:	Debugger for mono
 Summary(pl.UTF-8):	Odpluskiwacz dla mono
 Name:		mono-debugger
-Version:	0.31
+Version:	0.50
 Release:	1
 License:	GPL
 Group:		Development/Tools
-Source0:	http://go-mono.com/sources/mono-debugger/%{name}-%{version}.tar.gz
-# Source0-md5:	6ad73b85380b85d2be7feffcefe26a5f
+#Source0Download: http://go-mono.com/sources-stable/
+Source0:	http://go-mono.com/sources/mono-debugger/%{name}-%{version}.tar.bz2
+# Source0-md5:	7f5b02c78c2a3e809f7deaf32e3849f2
 #Source0:	http://primates.ximian.com/~martin/debugger/%{name}-%{version}.tar.gz
-Patch0:		%{name}-build-doc.patch
-Patch1:		%{name}-termcap.patch
+Patch0:		%{name}-termcap.patch
 URL:		http://www.go-mono.com/
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	glib2-devel
+BuildRequires:	glib2-devel >= 2.0.0
 BuildRequires:	libtool
-BuildRequires:	mono-csharp >= 1.1.16
+BuildRequires:	mono-csharp >= 1.2.4
 BuildRequires:	mono-jay
 BuildRequires:	monodoc
 BuildRequires:	pkgconfig
 BuildRequires:	readline-devel
-Requires:	mono >= 1.2.1
+Requires:	mono >= 1.2.4
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -69,7 +69,7 @@ Dokumentacja odpluskwiacza dla mono.
 %prep
 %setup -q
 #%patch0 -p1
-%patch1 -p1
+%patch0 -p1
 
 %build
 %{__libtoolize}
