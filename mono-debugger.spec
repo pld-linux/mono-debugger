@@ -22,6 +22,7 @@ BuildRequires:	monodoc
 BuildRequires:	pkgconfig
 BuildRequires:	readline-devel
 Requires:	mono >= 1.2.5
+ExclusiveArch:	%{ix86} %{x8664}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
