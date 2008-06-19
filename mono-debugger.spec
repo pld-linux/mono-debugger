@@ -7,11 +7,11 @@ Release:	1
 # mono-debugger itself on MIT, but BFD libs enforce GPL
 License:	GPL v2+
 Group:		Development/Tools
-#Source0Download: http://go-mono.com/sources-stable/
-Source0:	http://go-mono.com/sources/mono-debugger/%{name}-%{version}.tar.bz2
+# latest downloads summary at http://ftp.novell.com/pub/mono/sources-stable/
+Source0:	http://ftp.novell.com/pub/mono/sources/mono-debugger/%{name}-%{version}.tar.bz2
 # Source0-md5:	5d13af893299af49ad6abf2d76a35df6
 Patch0:		%{name}-termcap.patch
-URL:		http://www.go-mono.com/
+URL:		http://www.mono-project.com/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	glib2-devel >= 2.0.0
