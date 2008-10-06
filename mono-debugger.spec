@@ -2,26 +2,26 @@
 Summary:	Debugger for mono
 Summary(pl.UTF-8):	Odpluskiwacz dla mono
 Name:		mono-debugger
-Version:	0.60
+Version:	2.0
 Release:	1
 # mono-debugger itself on MIT, but BFD libs enforce GPL
 License:	GPL v2+
 Group:		Development/Tools
 # latest downloads summary at http://ftp.novell.com/pub/mono/sources-stable/
 Source0:	http://ftp.novell.com/pub/mono/sources/mono-debugger/%{name}-%{version}.tar.bz2
-# Source0-md5:	5d13af893299af49ad6abf2d76a35df6
+# Source0-md5:	8be8e757af20c9a10cf25f69737c2b96
 Patch0:		%{name}-termcap.patch
 URL:		http://www.mono-project.com/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	glib2-devel >= 2.0.0
 BuildRequires:	libtool
-BuildRequires:	mono-csharp >= 1.2.5
+BuildRequires:	mono-csharp >= 2.0
 BuildRequires:	mono-jay
 BuildRequires:	monodoc
 BuildRequires:	pkgconfig
 BuildRequires:	readline-devel
-Requires:	mono >= 1.2.5
+Requires:	mono >= 2.0
 ExclusiveArch:	%{ix86} %{x8664}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -91,7 +91,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS COPYING ChangeLog NEWS README RELEASE-NOTES-* TODO doc/*.txt
+%doc AUTHORS COPYING ChangeLog NEWS README doc/*.txt
 %attr(755,root,root) %{_bindir}/mdb
 %attr(755,root,root) %{_libdir}/libmonodebuggerreadline.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libmonodebuggerreadline.so.0
@@ -99,17 +99,16 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/libmonodebuggerserver.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libmonodebuggerserver.so.0
 %attr(755,root,root) %{_libdir}/libmonodebuggerserver.so
-%{_prefix}/lib/mono/1.0/mdb.exe
+%{_prefix}/lib/mono/2.0/mdb-symbolreader.exe
+%{_prefix}/lib/mono/2.0/mdb.exe
 %{_prefix}/lib/mono/gac/Mono.Debugger
-%{_prefix}/lib/mono/gac/Mono.Debugger.Backend
-%{_prefix}/lib/mono/gac/Mono.Debugger.Cecil
+%{_prefix}/lib/mono/gac/Mono.Debugger.SymbolWriter
 
 %files devel
 %defattr(644,root,root,755)
 %dir %{_prefix}/lib/mono/%{name}
 %{_prefix}/lib/mono/%{name}/Mono.Debugger.dll
-%{_prefix}/lib/mono/%{name}/Mono.Debugger.Backend.dll
-%{_prefix}/lib/mono/%{name}/Mono.Debugger.Cecil.dll
+%{_prefix}/lib/mono/%{name}/Mono.Debugger.SymbolWriter.dll
 %{_pkgconfigdir}/mono-debugger.pc
 
 #%files doc
