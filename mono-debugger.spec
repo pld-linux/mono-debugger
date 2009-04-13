@@ -2,14 +2,14 @@
 Summary:	Debugger for mono
 Summary(pl.UTF-8):	Odpluskiwacz dla mono
 Name:		mono-debugger
-Version:	2.2
+Version:	2.4
 Release:	1
 # mono-debugger itself on MIT, but BFD libs enforce GPL
 License:	GPL v2+
 Group:		Development/Tools
 # latest downloads summary at http://ftp.novell.com/pub/mono/sources-stable/
 Source0:	http://ftp.novell.com/pub/mono/sources/mono-debugger/%{name}-%{version}.tar.bz2
-# Source0-md5:	77dea7ca844e27654c87a33fed8b0a29
+# Source0-md5:	caa8608bb678b7f8662a3d45b70b0364
 Patch0:		%{name}-termcap.patch
 URL:		http://www.mono-project.com/
 BuildRequires:	autoconf
@@ -42,7 +42,8 @@ Obsoletes:	mono-debugger-static
 Development files for mono debugger.
 
 %description devel -l pl.UTF-8
-Pliki potrzebne programistom korzystającym z bibliotek odpluskwiacza mono.
+Pliki potrzebne programistom korzystającym z bibliotek odpluskwiacza
+mono.
 
 %package doc
 Summary:	Documentation for mono debugger
@@ -103,13 +104,16 @@ rm -rf $RPM_BUILD_ROOT
 %{_prefix}/lib/mono/2.0/mdb.exe
 %{_prefix}/lib/mono/gac/Mono.Debugger
 %{_prefix}/lib/mono/gac/Mono.Debugger.SymbolWriter
+%{_libdir}/mono/gac/Mono.Debugger.Frontend
 
 %files devel
 %defattr(644,root,root,755)
 %dir %{_prefix}/lib/mono/%{name}
 %{_prefix}/lib/mono/%{name}/Mono.Debugger.dll
 %{_prefix}/lib/mono/%{name}/Mono.Debugger.SymbolWriter.dll
+%{_libdir}/mono/mono-debugger/Mono.Debugger.Frontend.dll
 %{_pkgconfigdir}/mono-debugger.pc
+%{_pkgconfigdir}/mono-debugger-frontend.pc
 
 #%files doc
 #%defattr(644,root,root,755)
