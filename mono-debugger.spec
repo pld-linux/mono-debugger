@@ -3,7 +3,7 @@ Summary:	Debugger for mono
 Summary(pl.UTF-8):	Odpluskiwacz dla mono
 Name:		mono-debugger
 Version:	2.6
-Release:	1
+Release:	2
 # mono-debugger itself on MIT, but BFD libs enforce GPL
 License:	GPL v2+
 Group:		Development/Tools
@@ -104,14 +104,14 @@ rm -rf $RPM_BUILD_ROOT
 %{_prefix}/lib/mono/2.0/mdb.exe
 %{_prefix}/lib/mono/gac/Mono.Debugger
 %{_prefix}/lib/mono/gac/Mono.Debugger.SymbolWriter
-%{_libdir}/mono/gac/Mono.Debugger.Frontend
+%{_prefix}/lib/mono/gac/Mono.Debugger.Frontend
 
 %files devel
 %defattr(644,root,root,755)
 %dir %{_prefix}/lib/mono/%{name}
 %{_prefix}/lib/mono/%{name}/Mono.Debugger.dll
 %{_prefix}/lib/mono/%{name}/Mono.Debugger.SymbolWriter.dll
-%{_libdir}/mono/mono-debugger/Mono.Debugger.Frontend.dll
+%{_prefix}/lib/mono/%{name}/Mono.Debugger.Frontend.dll
 %{_pkgconfigdir}/mono-debugger.pc
 %{_pkgconfigdir}/mono-debugger-frontend.pc
 
