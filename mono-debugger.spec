@@ -2,22 +2,21 @@
 Summary:	Debugger for mono
 Summary(pl.UTF-8):	Odpluskiwacz dla mono
 Name:		mono-debugger
-Version:	2.4.2.1
+Version:	2.6
 Release:	1
 # mono-debugger itself on MIT, but BFD libs enforce GPL
 License:	GPL v2+
 Group:		Development/Tools
 # latest downloads summary at http://ftp.novell.com/pub/mono/sources-stable/
 Source0:	http://ftp.novell.com/pub/mono/sources/mono-debugger/%{name}-%{version}.tar.bz2
-# Source0-md5:	70bb41c52e39364416d3823c508b1a35
+# Source0-md5:	a6cac2d8dc8f788a7b2b35cd3f7204dc
 Patch0:		%{name}-termcap.patch
 URL:		http://www.mono-project.com/
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	glib2-devel >= 2.0.0
+BuildRequires:	glib2-devel >= 1:2.0.0
 BuildRequires:	libtool
 BuildRequires:	mono-csharp >= 2.0
-BuildRequires:	mono-jay
 BuildRequires:	monodoc
 BuildRequires:	pkgconfig
 BuildRequires:	readline-devel
@@ -69,7 +68,7 @@ Dokumentacja odpluskwiacza dla mono.
 %{__autoconf}
 %configure \
 	--disable-static
-%{__make}
+%{__make} -j1
 
 %install
 rm -rf $RPM_BUILD_ROOT
