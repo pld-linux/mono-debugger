@@ -1,18 +1,6 @@
-diff -ruN mono-debugger-0.31./configure.in mono-debugger-0.31/configure.in
---- mono-debugger-0.31./configure.in	2006-11-14 21:02:40.000000000 +0100
-+++ mono-debugger-0.31/configure.in	2006-11-22 20:58:48.340716055 +0100
-@@ -208,7 +208,7 @@
- AC_SUBST(LIB_SUFFIX)
- 
- AC_CHECK_HEADERS(stddef.h string.h strings.h stdlib.h time.h unistd.h)
--AC_CHECK_HEADERS(fcntl.h sys/file.h sys/time.h termcap.h termcap/termcap.h)
-+AC_CHECK_HEADERS(fcntl.h sys/file.h sys/time.h ncurses/termcap.h)
- AC_HEADER_TIME
- AC_HEADER_DIRENT
- AC_CHECK_FUNCS(fcntl getpagesize setitimer sysconf fdopen getuid getgid)
-diff -ruN mono-debugger-0.31./acinclude.m4 mono-debugger-0.31/acinclude.m4
---- mono-debugger-0.31./acinclude.m4	2006-11-14 21:02:40.000000000 +0100
-+++ mono-debugger-0.31/acinclude.m4	2006-11-22 21:08:59.870749358 +0100
+diff -urN mono-debugger-2.6/acinclude.m4 mono-debugger-2.6.new//acinclude.m4
+--- mono-debugger-2.6/acinclude.m4	2009-09-25 17:19:09.000000000 +0200
++++ mono-debugger-2.6.new//acinclude.m4	2010-03-11 20:08:15.869988048 +0100
 @@ -3,7 +3,7 @@
  
      old_LIBS=$LIBS
@@ -22,3 +10,15 @@ diff -ruN mono-debugger-0.31./acinclude.m4 mono-debugger-0.31/acinclude.m4
      AC_TRY_LINK(,[tgetent();],[
  	READLINE_DEPLIBS=$LIBS
      ],[
+diff -urN mono-debugger-2.6/configure.in mono-debugger-2.6.new//configure.in
+--- mono-debugger-2.6/configure.in	2009-09-25 17:19:09.000000000 +0200
++++ mono-debugger-2.6.new//configure.in	2010-03-11 20:07:54.397473048 +0100
+@@ -256,7 +256,7 @@
+ AC_SUBST(LIB_SUFFIX)
+ 
+ AC_CHECK_HEADERS(stddef.h string.h strings.h stdlib.h time.h unistd.h)
+-AC_CHECK_HEADERS(fcntl.h sys/user.h sys/file.h sys/time.h termcap.h termcap/termcap.h)
++AC_CHECK_HEADERS(fcntl.h sys/user.h sys/file.h sys/time.h ncurses/termcap.h)
+ AC_HEADER_TIME
+ AC_HEADER_DIRENT
+ AC_CHECK_FUNCS(fcntl getpagesize setitimer sysconf fdopen getuid getgid)
