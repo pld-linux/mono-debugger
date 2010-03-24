@@ -2,14 +2,14 @@
 Summary:	Debugger for mono
 Summary(pl.UTF-8):	Odpluskiwacz dla mono
 Name:		mono-debugger
-Version:	2.6
-Release:	2
+Version:	2.6.3
+Release:	1
 # mono-debugger itself on MIT, but BFD libs enforce GPL
 License:	GPL v2+
 Group:		Development/Tools
 # latest downloads summary at http://ftp.novell.com/pub/mono/sources-stable/
 Source0:	http://ftp.novell.com/pub/mono/sources/mono-debugger/%{name}-%{version}.tar.bz2
-# Source0-md5:	a6cac2d8dc8f788a7b2b35cd3f7204dc
+# Source0-md5:	8d36d7913d3e3670d8975617221019d5
 Patch0:		%{name}-termcap.patch
 URL:		http://www.mono-project.com/
 BuildRequires:	autoconf
