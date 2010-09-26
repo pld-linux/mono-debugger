@@ -76,12 +76,8 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-#cp doc/debugger.source $RPM_BUILD_ROOT%{_libdir}/monodoc/sources
-#cp doc/debugger.tree $RPM_BUILD_ROOT%{_libdir}/monodoc/sources
-#cp doc/debugger.zip $RPM_BUILD_ROOT%{_libdir}/monodoc/sources
-
 # these are used just as DllImport in C# code, so no devel part
-rm $RPM_BUILD_ROOT%{_libdir}/libmonodebugger*.la
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/libmonodebugger*.la
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -114,7 +110,3 @@ rm -rf $RPM_BUILD_ROOT
 %{_prefix}/lib/mono/%{name}/Mono.Debugger.Frontend.dll
 %{_pkgconfigdir}/mono-debugger.pc
 %{_pkgconfigdir}/mono-debugger-frontend.pc
-
-#%files doc
-#%defattr(644,root,root,755)
-#%{_libdir}/monodoc/sources/*
