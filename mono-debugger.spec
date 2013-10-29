@@ -3,7 +3,7 @@ Summary:	Debugger for mono
 Summary(pl.UTF-8):	Odpluskiwacz dla mono
 Name:		mono-debugger
 Version:	2.10
-Release:	1
+Release:	2
 # mono-debugger itself on MIT, but BFD libs enforce GPL
 License:	GPL v2+
 Group:		Development/Tools
